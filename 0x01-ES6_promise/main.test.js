@@ -1,12 +1,8 @@
-import handleProfileSignup from './6-final-user';
+import handleResponseFromAPI from "./2-then";
 
-test("handleProfileSignup returns the right array", async () => {
-    const queue = await handleProfileSignup('John', 'Doe', 'Gerald.jpg');
-    expect(queue).toEqual([
-      {
-        status: 'fulfilled',
-        value: { firstName: 'John', lastName: 'Doe' }
-      },
-      { status: 'rejected', value: 'Error: Gerald.jpg cannot be processed' }
-    ]);
+test("handleResponseFromAPI return the right response on reject", () => {
+    const promise = Promise.reject(new Error());
+  
+    const successResponse = handleResponseFromAPI(promise);
+    return expect(successResponse).resolves.toEqual(new Error());
 });
