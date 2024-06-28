@@ -1,6 +1,6 @@
 // Implement a class named Currency
 
-export default class HolbertonCourse {
+export default class Currency {
   constructor(code, name) {
     if (typeof code !== 'string') {
       throw new TypeError('Code must be a string');
@@ -39,6 +39,6 @@ export default class HolbertonCourse {
 
   // displayFullCurrency method
   displayFullCurrency() {
-    return `${this.name} (${this.code})`;
+    return `${this._name} (${this._code})`;
   }
 }
