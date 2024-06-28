@@ -1,8 +1,11 @@
-import handleResponseFromAPI from "./2-then";
+import Currency from './3-currency.js';
+import Pricing from './4-pricing.js';
 
-test("handleResponseFromAPI return the right response on reject", () => {
-    const promise = Promise.reject(new Error());
-  
-    const successResponse = handleResponseFromAPI(promise);
-    return expect(successResponse).resolves.toEqual(new Error());
+const dollar = new Currency('$', 'Dollars');
+
+test("Pricing is implemented correctly", () => {
+    const price = new Pricing(100, dollar);
+    expect(price.amount).toBe(100);
+    expect(price.currency).toBe(dollar);
+    expect(price.displayFullPrice()).toBe('100 Dollars ($)');
 });

@@ -21,7 +21,7 @@ export default class Pricing {
   }
 
   get currency() {
-    return this._currency.displayFullCurrency();
+    return this._currency;
   }
 
   // Setters
