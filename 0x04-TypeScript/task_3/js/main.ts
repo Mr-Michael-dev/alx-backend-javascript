@@ -1,4 +1,4 @@
-/// <reference types="./crud.d.ts" />
+/// <reference types="node" />
 // create Teacher interface
 import {RowID, RowElement} from './interface';
 import * as CRUD from './crud';
