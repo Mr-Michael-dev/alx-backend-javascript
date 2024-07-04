@@ -65,3 +65,19 @@ function executeWork(employee: Teacher | Director): void {
         employee.workTeacherTasks();
     }
 }
+
+// write a string literal type named subjects
+type Subjects = 'Math' | 'History'
+
+// write a function teachClass
+function teachClass(todayClass: Subjects) {
+    if (todayClass === 'Math') {
+        return 'Teaching Math';
+    }
+    else if (todayClass === 'History') {
+        return 'Teaching History';
+    }
+    else {
+        console.log('Invalid subject');
+    }
+}
