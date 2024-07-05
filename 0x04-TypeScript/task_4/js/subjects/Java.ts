@@ -1,9 +1,8 @@
 // Using declaration merging, add a new optional attribute experienceTeachingJava (number) to the Teacher interface
 
+
 namespace Subjects {
     export interface Teacher {
-        firstName: string;
-        lastName: string;
         experienceTeachingJava?: number;
     }
 
@@ -14,7 +13,9 @@ namespace Subjects {
         }
 
         getAvailableTeacher(): string {
-            if (this.teacher.experienceTeachingJava) {
+            if (this.teacher &&
+                this.teacher.experienceTeachingJava !== undefined &&
+                this.teacher.experienceTeachingJava > 0) {
                 return `Available Teacher: ${this.teacher.firstName}`
             }
             return "No available teacher"

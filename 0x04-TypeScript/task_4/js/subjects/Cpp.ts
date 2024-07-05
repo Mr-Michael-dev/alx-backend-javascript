@@ -2,8 +2,6 @@
 
 namespace Subjects {
     export interface Teacher {
-        firstName: string;
-        lastName: string;
         experienceTeachingC?: number;
     }
 
@@ -14,7 +12,9 @@ namespace Subjects {
         }
 
         getAvailableTeacher(): string {
-            if (this.teacher.experienceTeachingC) {
+            if (this.teacher &&
+                this.teacher.experienceTeachingC !== undefined &&
+                this.teacher.experienceTeachingC > 0) {
                 return `Available Teacher: ${this.teacher.firstName}`
             }
             return "No available teacher"
