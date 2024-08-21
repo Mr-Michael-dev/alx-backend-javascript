@@ -9,7 +9,7 @@ function countStudents(path) {
     const lines = data.trim().split('\n');
 
     // Remove the header line
-    const header = lines.shift();
+    lines.shift();
 
     // If there are no data lines left after removing the header
     if (lines.length === 0) {
@@ -23,7 +23,7 @@ function countStudents(path) {
 
     // Process each line
     lines.forEach((line) => {
-      const [firstname, lastname, age, field] = line.split(',');
+      const [firstname, , , field] = line.split(',');
 
       if (field) {
         if (!fieldCount[field]) {
@@ -40,7 +40,6 @@ function countStudents(path) {
     for (const [field, students] of Object.entries(fieldCount)) {
       console.log(`Number of students in ${field}: ${students.length}. List: ${students.join(', ')}`);
     }
-
   } catch (error) {
     // Handle errors (e.g., file not found)
     console.error('Cannot load the database');

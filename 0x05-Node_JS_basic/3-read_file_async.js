@@ -14,7 +14,7 @@ function countStudents(path) {
       try {
         // Split the file content into lines and remove the header
         const lines = data.trim().split('\n');
-        const header = lines.shift();
+        lines.shift();
 
         // If there are no data lines left after removing the header
         if (lines.length === 0) {
@@ -29,7 +29,7 @@ function countStudents(path) {
 
         // Process each line
         lines.forEach((line) => {
-          const [firstname, lastname, age, field] = line.split(',');
+          const [firstname, , , field] = line.split(',');
 
           if (field) {
             if (!fieldCount[field]) {
