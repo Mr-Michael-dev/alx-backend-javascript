@@ -24,7 +24,7 @@ app.get('/students', async (req, res) => {
     res.end(`This is the list of our students\n${studentData.trim()}`);
   } catch (error) {
     res.statusCode = 500;
-    res.end('Cannot load the database');
+    res.end('Internal Server Error');
   }
 });
 
