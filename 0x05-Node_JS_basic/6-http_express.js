@@ -6,8 +6,11 @@ const app = express();
 const port = 1245;
 
 app.get('/', (req, res) => {
-  res.statusCode = 200;
-  res.send('Hello Holberton School!');
+  res.status(200).send('Hello Holberton School!');
+});
+
+app.all('*', (req, res) => {
+  res.status(404).send(`Cannot GET /lskdlskd`);
 });
 
 app.listen(port, () => {
