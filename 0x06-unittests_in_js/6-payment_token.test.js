@@ -19,4 +19,19 @@ describe('getPaymentTokenFromAPI', () => {
       })
       .catch(done);
   }));
+  it('should not resolve or reject when success is false', () => new Promise((done) => {
+    const timeout = setTimeout(() => {
+      done();
+    }, 100); // Test will pass after 100ms if no resolution/rejection
+
+    getPaymentTokenFromAPI(false)
+      .then(() => {
+        clearTimeout(timeout);
+        done(new Error('Expected the promise to do nothing'));
+      })
+      .catch(() => {
+        clearTimeout(timeout);
+        done(new Error('Expected the promise to do nothing'));
+      });
+  }));
 });
