@@ -1,5 +1,5 @@
 // 3-payment.test.js
-const { spy } = require('sinon');
+const sinon = require('sinon');
 const { expect } = require('chai');
 const Utils = require('./utils');
 const sendPaymentRequestToApi = require('./3-payment');
@@ -8,7 +8,7 @@ describe('sendPaymentRequestToApi', () => {
   let mySpy;
 
   beforeEach(() => {
-    mySpy = spy(Utils, 'calculateNumber');
+    mySpy = sinon.spy(Utils, 'calculateNumber');
   });
 
   afterEach(() => {
