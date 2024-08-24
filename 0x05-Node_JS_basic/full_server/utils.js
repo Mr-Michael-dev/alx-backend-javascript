@@ -1,6 +1,6 @@
-const fs = require('fs');
+import fs from 'fs';
 
-function readDatabase(path) {
+export function readDatabase(path) {
   return new Promise((resolve, reject) => {
     // Read the file asynchronously using the traditional fs module with a callback
     fs.readFile(path, 'utf8', (error, data) => {
@@ -52,5 +52,3 @@ function readDatabase(path) {
     });
   });
 }
-
-module.exports = readDatabase;

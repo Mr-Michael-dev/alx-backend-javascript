@@ -1,7 +1,7 @@
 // StudentsController class
-const readDatabase = require('../utils')
+import { readDatabase } from '../utils';
 
-class StudentsController {
+export default class StudentsController {
   getAllStudents(req, res) {
     res.statusCode = 200;
     const dbPath = process.argv[2];
@@ -50,5 +50,3 @@ class StudentsController {
     });
   }
 }
-
-module.exports = StudentsController;
