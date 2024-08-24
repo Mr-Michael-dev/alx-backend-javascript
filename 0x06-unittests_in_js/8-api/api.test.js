@@ -2,7 +2,7 @@
 const request = require('request');
 const { expect } = require('chai');
 
-describe('gET /', () => {
+describe('GET /', () => {
   it('should return a response code of 200', () => new Promise((done) => {
     request.get('http://127.0.0.1:7865/', (error, response) => {
       expect(response.statusCode).to.equal(200);
