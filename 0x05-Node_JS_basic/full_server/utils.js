@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-export function readDatabase(path) {
+export default function readDatabase(path) {
   return new Promise((resolve, reject) => {
     // Read the file asynchronously using the traditional fs module with a callback
     fs.readFile(path, 'utf8', (error, data) => {
@@ -42,8 +42,7 @@ export function readDatabase(path) {
         // Log the total number of students
         console.log(`Number of students: ${studentCount}`);
 
-        resolve();
-        return fieldCount;
+        resolve(fieldCount);
       } catch (processingError) {
         // Catch any processing errors and reject the promise
         console.error('Error processing the file');
